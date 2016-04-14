@@ -2,12 +2,6 @@
 
 Service registry bridge for Docker, sponsored by [Weave](http://weave.works).
 
-[![Circle CI](https://circleci.com/gh/gliderlabs/registrator.png?style=shield)](https://circleci.com/gh/gliderlabs/registrator)
-[![Docker Hub](https://img.shields.io/badge/docker-ready-blue.svg)](https://registry.hub.docker.com/u/gliderlabs/registrator/)
-[![ImageLayers Size](https://img.shields.io/imagelayers/image-size/gliderlabs/registrator/latest.svg)](https://imagelayers.io/?images=gliderlabs%2Fregistrator:latest)
-[![IRC Channel](https://img.shields.io/badge/irc-%23gliderlabs-blue.svg)](https://kiwiirc.com/client/irc.freenode.net/#gliderlabs)
-<br /><br />
-
 Registrator automatically registers and deregisters services for any Docker
 container by inspecting containers as they come online. Registrator
 supports pluggable service registries, which currently includes
@@ -15,6 +9,15 @@ supports pluggable service registries, which currently includes
 [SkyDNS 2](https://github.com/skynetservices/skydns/).
 
 Full documentation available at http://gliderlabs.com/registrator
+
+## This gliderlabs/registrator fork
+
+This fork add TLS support for Consul Backend.
+
+Run:
+```
+docker run -d --name=registrator --net=host  -v /var/run/docker.sock:/tmp/docker.sock -v /etc/certificates/:/etc/certificates/ -e CONSUL_CACERT=/etc/pmsipilot/docker-ca.crt -e CONSUL_TLSCERT=/etc/certificates/consul-client.crt -e CONSUL_TLSKEY=/etc/certificates/consul-client.key cyprien/registrator consul-tls://srv-consul.local:8543
+```
 
 ## Getting Registrator
 
