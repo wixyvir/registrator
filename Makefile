@@ -17,9 +17,9 @@ release:
 	rm -rf release && mkdir release
 	go get github.com/progrium/gh-release/...
 	cp build/* release
-	gh-release create gliderlabs/$(NAME) $(VERSION) \
+	gh-release create wixyvir/$(NAME) $(VERSION) \
 		$(shell git rev-parse --abbrev-ref HEAD) $(VERSION)
-	glu hubtag gliderlabs/$(NAME) $(VERSION)
+	glu hubtag wixyvir/$(NAME) $(VERSION)
 
 docs:
 	boot2docker ssh "sync; sudo sh -c 'echo 3 > /proc/sys/vm/drop_caches'" || true
