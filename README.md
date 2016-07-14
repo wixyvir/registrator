@@ -12,6 +12,8 @@ Full documentation available at http://gliderlabs.com/registrator
 
 ## This gliderlabs/registrator fork
 
+**This fork TLS support [has been merged](https://github.com/gliderlabs/registrator/pull/394) in the official gliderlabs/registrator project**
+
 This fork add TLS support for Consul Backend.
 
 Run:
